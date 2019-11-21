@@ -1,14 +1,14 @@
 <template>
-  <div>asdfasdgsdfg
-
-  </div>
+  <v-container>
+    bottomNavigation
+  </v-container>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'bottomNavigation',
   props: {
-    msg: String
+    url: String
   }
 }
 </script>

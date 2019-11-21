@@ -1,12 +1,12 @@
 <template>
   <v-container>
-    info
+    rightNavigation
   </v-container>
 </template>
 
 <script>
 export default {
-  name: 'info',
+  name: 'rightNavigation',
   props: {
     url: String
   }
