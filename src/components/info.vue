@@ -1,14 +1,13 @@
 <template>
-  <div>asdfasdgsdfg
-
+  <div>url
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'info',
   props: {
-    msg: String
+    url: String
   }
 }
 </script>
