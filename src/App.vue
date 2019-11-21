@@ -4,11 +4,20 @@
 				<v-toolbar-title>Toolbar</v-toolbar-title>
 			</v-app-bar>
 			<v-content>
-				<v-container fluid fill-height>
-					<right-navigation/>
-					<bottom-navigation/>
-					<router-view/>
-
+				<v-container>
+					<v-row no-gutters>
+						<v-col cols="12" sm="10">
+							<v-col cols="12" sm="12" style="background: red">
+								<router-view/>
+							</v-col>
+							<v-col cols="12" sm="12" style="background: red">
+								<bottom-navigation/>
+							</v-col>
+						</v-col>
+						<v-col cols="12" sm="2">
+							<right-navigation/>
+						</v-col>
+					</v-row>
 				</v-container>
 			</v-content>
 			<v-footer app color="deep-orange darken-1" class="white--text">
