@@ -1,13 +1,12 @@
 <template>
   <v-container>
-    bottomNavigation
-    <v-btn color="primary">Primary</v-btn>
+    photo
   </v-container>
 </template>
 
 <script>
 export default {
-  name: 'bottomNavigation',
+  name: 'photo',
   props: {
     url: String
   }

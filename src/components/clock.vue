@@ -1,13 +1,12 @@
 <template>
   <v-container>
-    bottomNavigation
-    <v-btn color="primary">Primary</v-btn>
+    clock
   </v-container>
 </template>
 
 <script>
 export default {
-  name: 'bottomNavigation',
+  name: 'clock',
   props: {
     url: String
   }

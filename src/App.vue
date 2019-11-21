@@ -7,15 +7,23 @@
 				<v-container>
 					<v-row no-gutters>
 						<v-col cols="12" sm="10">
-							<v-col cols="12" sm="12" style="background: red">
+							<v-col cols="12" sm="12" style="background: red;">
 								<router-view/>
 							</v-col>
-							<v-col cols="12" sm="12" style="background: red">
+							<v-col cols="12" sm="12" style="background: darkseagreen">
 								<bottom-navigation/>
 							</v-col>
 						</v-col>
 						<v-col cols="12" sm="2">
-							<right-navigation/>
+							<v-col cols="12" sm="12" style="background: green">
+								<clock/>
+							</v-col>
+							<v-col cols="12" sm="12" style="background: aqua">
+								<photo/>
+							</v-col>
+							<v-col cols="12" sm="12" style="background: yellow">
+								<right-navigation/>
+							</v-col>
 						</v-col>
 					</v-row>
 				</v-container>
@@ -32,9 +40,11 @@
 // <router-view/>
 import RightNavigation from "./components/rightNavigation";
 import BottomNavigation from "./components/bottomNavigation";
+import Clock from "./components/clock";
+import Photo from "./components/photo";
 export default {
   name: 'App',
-    components: {BottomNavigation, RightNavigation},
+    components: {Photo, Clock, BottomNavigation, RightNavigation},
     data: () => ({
         drawer: true,
         drawerRight: null,
