@@ -3,7 +3,7 @@
       class="mx-auto"
       tile
       flat
-      color="deep-orange darken-1"
+      style="background: #ea6921;"
   >
     <v-list-item @click="$emit('selected', 1)">
       <v-list-item-content>
