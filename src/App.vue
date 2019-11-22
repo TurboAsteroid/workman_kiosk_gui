@@ -17,11 +17,13 @@
 							</v-col>
 							<v-col cols="12" sm="12" style="background: darkseagreen">
 {{rightNav}}
-<bottom-navigation v-if="!rightNav"/>
+
+<info2 v-if="!rightNav"/>
 							</v-col>
 						</v-col>
 						<v-col cols="12" sm="2">
 							<v-col cols="12" sm="12" style="background: green">
+								<v-btn v-if="rightNav" @click="rightNav = null">Выход</v-btn>
 								<clock/>
 							</v-col>
 							<v-col cols="12" sm="12" style="background: blue">
@@ -47,10 +49,11 @@ import RightNavigation from "./components/rightNavigation";
 import Clock from "./components/clock";
 import Photo from "./components/photo";
 import Info from "./components/info";
-import BottomNavigation from "./components/bottomNavigation";
+// import BottomNavigation from "./components/bottomNavigation";
+import Info2 from "./components/info2";
 export default {
   name: 'App',
-    components: {BottomNavigation, Info, Photo, Clock, RightNavigation},
+    components: {Info2, Info, Photo, Clock, RightNavigation},
     data: () => ({
         bottomNav: '1',
         rightNav: null
