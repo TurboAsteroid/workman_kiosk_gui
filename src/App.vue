@@ -1,7 +1,12 @@
 <template>
 		<v-app>
 			<v-app-bar app clipped-right color="deep-orange darken-1" dark>
-				<v-toolbar-title>Toolbar</v-toolbar-title>
+				<v-toolbar-title>ЭЛЕМ</v-toolbar-title>
+				<v-spacer></v-spacer>
+				<div>
+					ПО ВСЕМ ВОПРОСАМ, СВЯЗАННЫМ С РАБОТОЙ ТЕРМИНАЛА,
+					ОБРАЩАТЬСЯ ПО ТЕЛЕФОНУ 8(34368)4-65-79
+				</div>
 			</v-app-bar>
 			<v-content>
 				<v-container>
@@ -11,45 +16,93 @@
 								<router-view/>
 							</v-col>
 							<v-col cols="12" sm="12" style="background: darkseagreen">
-								<bottom-navigation/>
+{{rightNav}}
 							</v-col>
 						</v-col>
 						<v-col cols="12" sm="2">
 							<v-col cols="12" sm="12" style="background: green">
 								<clock/>
 							</v-col>
+							<v-col cols="12" sm="12" style="background: blue">
+								<info/>
+							</v-col>
 							<v-col cols="12" sm="12" style="background: aqua">
 								<photo/>
 							</v-col>
-							<v-col cols="12" sm="12" style="background: yellow">
-								<right-navigation/>
+							<v-col cols="12" sm="12">
+								<right-navigation @selected="(val) => rightNav = val"/>
 							</v-col>
 						</v-col>
 					</v-row>
 				</v-container>
 			</v-content>
-			<v-footer app color="deep-orange darken-1" class="white--text">
-				<span>Vuetify</span>
-				<v-spacer></v-spacer>
-				<span>&copy; 2019</span>
-			</v-footer>
+			<v-bottom-navigation v-model="bottomNav" color="deep-orange darken-1">
+				<v-btn value="1">
+					<span>Recent</span>
+					<v-icon>mdi-history</v-icon>
+				</v-btn>
+
+				<v-btn value="2">
+					<span>Favorites</span>
+					<v-icon>mdi-heart</v-icon>
+				</v-btn>
+
+				<v-btn value="3">
+					<span>Nearby</span>
+					<v-icon>mdi-map-marker</v-icon>
+				</v-btn>
+
+
+				<v-btn value="4">
+					<span>Recent</span>
+					<v-icon>mdi-history</v-icon>
+				</v-btn>
+
+				<v-btn value="5">
+					<span>Favorites</span>
+					<v-icon>mdi-heart</v-icon>
+				</v-btn>
+
+				<v-btn value="6">
+					<span>Nearby</span>
+					<v-icon>mdi-map-marker</v-icon>
+				</v-btn>
+
+				<v-btn value="7">
+					<span>Recent</span>
+					<v-icon>mdi-history</v-icon>
+				</v-btn>
+
+				<v-btn value="8">
+					<span>Favorites</span>
+					<v-icon>mdi-heart</v-icon>
+				</v-btn>
+
+				<v-btn value="9">
+					<span>Nearby</span>
+					<v-icon>mdi-map-marker</v-icon>
+				</v-btn>
+
+				<v-btn value="10">
+					<span>Nearby</span>
+					<v-icon>mdi-map-marker</v-icon>
+				</v-btn>
+			</v-bottom-navigation>
 		</v-app>
 </template>
 
 <script>
 // <router-view/>
 import RightNavigation from "./components/rightNavigation";
-import BottomNavigation from "./components/bottomNavigation";
 import Clock from "./components/clock";
 import Photo from "./components/photo";
+import Info from "./components/info";
 export default {
   name: 'App',
-    components: {Photo, Clock, BottomNavigation, RightNavigation},
+    components: {Info, Photo, Clock, RightNavigation},
     data: () => ({
-        drawer: true,
-        drawerRight: null,
-        right: true,
-        left: false,
+        bottomNav: '1',
+        rightNav: null
     })
 };
 </script>
