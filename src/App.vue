@@ -17,6 +17,7 @@
 							</v-col>
 							<v-col cols="12" sm="12" style="background: darkseagreen">
 {{rightNav}}
+<bottom-navigation v-if="!rightNav"/>
 							</v-col>
 						</v-col>
 						<v-col cols="12" sm="2">
@@ -36,58 +37,7 @@
 					</v-row>
 				</v-container>
 			</v-content>
-			<v-bottom-navigation v-model="bottomNav" color="deep-orange darken-1">
-				<v-btn value="1">
-					<span>Recent</span>
-					<v-icon>mdi-history</v-icon>
-				</v-btn>
 
-				<v-btn value="2">
-					<span>Favorites</span>
-					<v-icon>mdi-heart</v-icon>
-				</v-btn>
-
-				<v-btn value="3">
-					<span>Nearby</span>
-					<v-icon>mdi-map-marker</v-icon>
-				</v-btn>
-
-
-				<v-btn value="4">
-					<span>Recent</span>
-					<v-icon>mdi-history</v-icon>
-				</v-btn>
-
-				<v-btn value="5">
-					<span>Favorites</span>
-					<v-icon>mdi-heart</v-icon>
-				</v-btn>
-
-				<v-btn value="6">
-					<span>Nearby</span>
-					<v-icon>mdi-map-marker</v-icon>
-				</v-btn>
-
-				<v-btn value="7">
-					<span>Recent</span>
-					<v-icon>mdi-history</v-icon>
-				</v-btn>
-
-				<v-btn value="8">
-					<span>Favorites</span>
-					<v-icon>mdi-heart</v-icon>
-				</v-btn>
-
-				<v-btn value="9">
-					<span>Nearby</span>
-					<v-icon>mdi-map-marker</v-icon>
-				</v-btn>
-
-				<v-btn value="10">
-					<span>Nearby</span>
-					<v-icon>mdi-map-marker</v-icon>
-				</v-btn>
-			</v-bottom-navigation>
 		</v-app>
 </template>
 
@@ -97,9 +47,10 @@ import RightNavigation from "./components/rightNavigation";
 import Clock from "./components/clock";
 import Photo from "./components/photo";
 import Info from "./components/info";
+import BottomNavigation from "./components/bottomNavigation";
 export default {
   name: 'App',
-    components: {Info, Photo, Clock, RightNavigation},
+    components: {BottomNavigation, Info, Photo, Clock, RightNavigation},
     data: () => ({
         bottomNav: '1',
         rightNav: null
