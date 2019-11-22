@@ -77,7 +77,14 @@ export default {
       }
     },
     tab: null,
-  })
+  }),
+	mounted() {
+      const self = this
+      setInterval(() => {
+          let currentDate = new Date()
+          self.tab = 'tab-' + Math.round(currentDate.getSeconds()/6)
+			}, 1000)
+	}
 }
 </script>
 <style scoped>
