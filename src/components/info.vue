@@ -7,7 +7,7 @@
           :value="'tab-' + i"
           style="height: 771px; width: 1005px;"
       >
-          <img :src="item.img" style="padding-left: 10px; padding-right: 10px"
+          <img :src="item.img" style="padding-left: 12px; padding-right: 10px"
                class="deep-orange darken-1">
       </v-tab-item>
     </v-tabs-items>
