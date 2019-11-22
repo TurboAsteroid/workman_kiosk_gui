@@ -1,49 +1,38 @@
 <template>
-		<v-app>
-			<v-app-bar app clipped-right color="deep-orange darken-1" dark>
-				<v-toolbar-title>ЭЛЕМ</v-toolbar-title>
-				<v-spacer></v-spacer>
-				<div>
-					ПО ВСЕМ ВОПРОСАМ, СВЯЗАННЫМ С РАБОТОЙ ТЕРМИНАЛА,
-					ОБРАЩАТЬСЯ ПО ТЕЛЕФОНУ 8(34368)4-65-79
-				</div>
-			</v-app-bar>
-			<v-content>
-				<v-container>
-					<v-row no-gutters>
-						<v-col cols="12" sm="7">
-							<v-col cols="12" sm="12" style="background: red;" v-if="rightNav">
-<!--								<router-view/>-->
-							{{rightNav}}
-							</v-col>
-							<v-col cols="12" sm="12" style="padding: 0px">
-
-
-<info v-if="!rightNav"/>
-							</v-col>
-						</v-col>
-						<v-col cols="12" sm="5">
-							<v-col cols="12" sm="12" style="background: green">
-								<v-btn v-if="rightNav" @click="rightNav = null">Выход</v-btn>
-								<clock/>
-							</v-col>
-							<v-col cols="12" sm="12" style="background: #ea6921;" v-if="!rightNav" @click="rightNav = -1">
-								<div style="background: #fec552; height: 400px; width: 180px;">
-									<img :src="images.proximity">
-								</div>
-							</v-col>
-							<v-col cols="12" sm="12" style="background: #ea6921;" v-if="rightNav">
-								<photo/>
-							</v-col>
-							<v-col cols="12" sm="12" v-if="rightNav">
-								<right-navigation @selected="(val) => rightNav = val"/>
-							</v-col>
-						</v-col>
-					</v-row>
-				</v-container>
-			</v-content>
-
-		</v-app>
+	<v-app>
+		<v-container>
+			<v-row no-gutters>
+				<v-col cols="12" sm="7" style="background:#962716"><img :src="images.logo" style="margin-left: 20px; margin-top: 17px;"/></v-col>
+				<v-col cols="12" sm="5">
+					<v-col cols="12" sm="12" style="background: green">
+						<v-btn v-if="rightNav" @click="rightNav = null">Выход</v-btn>
+						<clock/>
+					</v-col>
+				</v-col>
+				<v-col cols="12" sm="7">
+					<div style="background: red;" v-if="rightNav > 0">
+						{{rightNav}}
+					</div>
+					<v-col cols="12" sm="12" style="padding: 0px">
+						<info v-if="rightNav < 0 || rightNav == null"/>
+					</v-col>
+				</v-col>
+				<v-col cols="12" sm="5">
+					<v-col cols="12" sm="12" style="background: #ea6921;" v-if="!rightNav" @click="rightNav = -1">
+						<div style="background: #fec552; height: 400px; width: 180px;">
+							<img :src="images.proximity">
+						</div>
+					</v-col>
+					<v-col cols="12" sm="12" style="background: #ea6921;" v-if="rightNav">
+						<photo/>
+					</v-col>
+					<v-col cols="12" sm="12" v-if="rightNav">
+						<right-navigation @selected="(val) => rightNav = val"/>
+					</v-col>
+				</v-col>
+			</v-row>
+		</v-container>
+	</v-app>
 </template>
 
 <script>
@@ -57,7 +46,8 @@ export default {
     components: {Info, Photo, Clock, RightNavigation},
     data: () => ({
         images: {
-            proximity: require('@/assets/img/proximity.gif')
+            proximity: require('@/assets/img/proximity.gif'),
+            logo: require('@/assets/img/logo.png')
         },
         rightNav: null
     })
