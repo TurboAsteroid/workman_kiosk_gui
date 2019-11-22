@@ -1,8 +1,8 @@
 <template>
   <v-card
       class="mx-auto"
-      max-width="400"
       tile
+      flat
       color="deep-orange darken-1"
   >
     <v-list-item @click="$emit('selected', 1)">
