@@ -2,14 +2,14 @@
 	<v-app>
 		<v-container>
 			<v-row no-gutters>
-				<v-col cols="12" sm="7" style="background:#962716"><img :src="images.logo" style="margin-left: 20px; margin-top: 17px;"/></v-col>
-				<v-col cols="12" sm="5">
-					<v-col cols="12" sm="12" style="background: green">
-						<v-btn v-if="rightNav" @click="rightNav = null">Выход</v-btn>
-						<clock/>
-					</v-col>
+				<v-col cols="12" lg="7" style="background:#962716">
+					<img :src="images.logo" style="margin-left: 20px; margin-top: 17px;"/>
 				</v-col>
-				<v-col cols="12" sm="7">
+				<div style="width: 255px; background:#962716">
+					<v-btn v-if="rightNav" @click="rightNav = null">Выход</v-btn>
+					<clock  v-if="!rightNav" style="margin-top: 22px"/>
+				</div>
+				<v-col cols="12" lg="7">
 					<div style="background: red;" v-if="rightNav > 0">
 						{{rightNav}}
 					</div>
@@ -17,19 +17,19 @@
 						<info v-if="rightNav < 0 || rightNav == null"/>
 					</v-col>
 				</v-col>
-				<v-col cols="12" sm="5">
+				<div style="width: 255px">
 					<v-col cols="12" sm="12" style="background: #ea6921;" v-if="!rightNav" @click="rightNav = -1">
-						<div style="background: #fec552; height: 400px; width: 180px;">
+						<div style="width: 180px; height: 841px;">
+							<div style="background: #fec552; width: 180px; height: 842px;">
 							<img :src="images.proximity">
+							</div>
 						</div>
 					</v-col>
-					<v-col cols="12" sm="12" style="background: #ea6921;" v-if="rightNav">
+					<v-col cols="12" sm="12" style="width: 255px; height: 865px;background: #ea6921;" v-if="rightNav">
 						<photo/>
-					</v-col>
-					<v-col cols="12" sm="12" v-if="rightNav">
 						<right-navigation @selected="(val) => rightNav = val"/>
 					</v-col>
-				</v-col>
+				</div>
 			</v-row>
 		</v-container>
 	</v-app>
