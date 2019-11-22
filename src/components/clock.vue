@@ -13,13 +13,17 @@ export default {
   data: () => ({
     time: '',
   }),
-  mounted: function() {
-    setInterval(() => {
+  methods: {
+    clock() {
       let currentDate = new Date()
       let currentMinutes = currentDate.getMinutes()
       let currentSeconds = currentDate.getSeconds()
       this.time = `${currentDate.getHours()}${currentSeconds%2?' ':':'}${currentMinutes < 10 ? '0' : ''}${currentMinutes}`
-    }, 1000)
+    }
+  },
+  mounted: function() {
+    this.clock()
+    setInterval(() => this.clock(), 1000)
   },
 }
 </script>
