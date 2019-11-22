@@ -11,28 +11,31 @@
 			<v-content>
 				<v-container>
 					<v-row no-gutters>
-						<v-col cols="12" sm="10">
-							<v-col cols="12" sm="12" style="background: red;">
-								<router-view/>
+						<v-col cols="12" sm="7">
+							<v-col cols="12" sm="12" style="background: red;" v-if="rightNav">
+<!--								<router-view/>-->
+							{{rightNav}}
 							</v-col>
-							<v-col cols="12" sm="12" style="background: darkseagreen">
-{{rightNav}}
+							<v-col cols="12" sm="12" style="padding: 0px">
 
-<info2 v-if="!rightNav"/>
+
+<info v-if="!rightNav"/>
 							</v-col>
 						</v-col>
-						<v-col cols="12" sm="2">
+						<v-col cols="12" sm="5">
 							<v-col cols="12" sm="12" style="background: green">
 								<v-btn v-if="rightNav" @click="rightNav = null">Выход</v-btn>
 								<clock/>
 							</v-col>
-							<v-col cols="12" sm="12" style="background: blue">
-								<info/>
+							<v-col cols="12" sm="12" style="background: #ea6921;" v-if="!rightNav" @click="rightNav = -1">
+								<div style="background: #fec552; height: 400px; width: 180px;">
+									<img :src="images.proximity">
+								</div>
 							</v-col>
-							<v-col cols="12" sm="12" style="background: aqua">
+							<v-col cols="12" sm="12" style="background: #ea6921;" v-if="rightNav">
 								<photo/>
 							</v-col>
-							<v-col cols="12" sm="12">
+							<v-col cols="12" sm="12" v-if="rightNav">
 								<right-navigation @selected="(val) => rightNav = val"/>
 							</v-col>
 						</v-col>
@@ -49,13 +52,13 @@ import RightNavigation from "./components/rightNavigation";
 import Clock from "./components/clock";
 import Photo from "./components/photo";
 import Info from "./components/info";
-// import BottomNavigation from "./components/bottomNavigation";
-import Info2 from "./components/info2";
 export default {
   name: 'App',
-    components: {Info2, Info, Photo, Clock, RightNavigation},
+    components: {Info, Photo, Clock, RightNavigation},
     data: () => ({
-        bottomNav: '1',
+        images: {
+            proximity: require('@/assets/img/proximity.gif')
+        },
         rightNav: null
     })
 };
