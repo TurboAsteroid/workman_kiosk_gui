@@ -1,26 +1,26 @@
 <template>
-  <div>
-    <v-tabs-items v-model="tab">
+  <div style="background-color: #a23b2a">
+    <v-tabs-items v-model="tab" class="imageBlock">
       <v-tab-item
           v-for="(item, i) in images"
           :key="i"
           :value="'tab-' + i"
-          style="height: 771px; width: 1005px;"
+          style="height: 771px; width: 1004px;"
       >
-          <img :src="item.img" style="padding-left: 11px; padding-right: 12px"
+          <img :src="item.img"
                class="deep-orange darken-1">
       </v-tab-item>
     </v-tabs-items>
     <v-tabs
         v-model="tab"
-        background-color="deep-orange darken-1"
+        background-color="#a23b2a"
         dark
         centered
-        height="94"
+        class="tabItemBlock"
+        height = "100"
     >
-      <v-tabs-slider></v-tabs-slider>
       <v-tab
-        style="width: 94px;"
+        class="tabItem"
         v-for="(item, i) in images"
         :key="'#tab-' + i"
         :href="'#tab-' + i"
@@ -86,11 +86,11 @@ export default {
   methods: {
     changePage(index = this.image + 1) {
       clearInterval(this.interval)
-      this.image = (index %this.images.length)
+      this.image = (index % this.images.length)
       this.setInterval()
     },
     setInterval() {
-      this.interval = setInterval(() => this.changePage(), 6000)
+      this.interval = setInterval(() => this.changePage(), 10000)
     }
   },
   computed: {
@@ -101,4 +101,33 @@ export default {
 }
 </script>
 <style scoped>
+  .imageBlock {
+    height: 791px;
+    width: 1025px;
+    margin: 0;
+    padding: 10px;
+    background-color: #fec552;
+    overflow: hidden;
+    position: relative;
+  }
+  .tabItem {
+    display: inline-block;
+    width: 90px;
+    height: 87px;
+    padding: 0;
+    margin: 0 2px;
+  }
+  .tabItem img {
+  }
+  .tabItemBlock {
+    height: 117px;
+    background-color: #a23b2a;
+    padding-top: 17px;
+    text-align: center;
+    width: 940px;
+    margin: 0 auto;
+  }
+
+
+
 </style>

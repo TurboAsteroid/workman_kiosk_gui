@@ -7,14 +7,19 @@ export default new Vuex.Store({
   plugins: [],
   modules: {},
   state: {
-    user: null
+    user: null,
+    timer: 0
   },
   getters: {
-    user: state => state.user
+    user: state => state.user,
+    timer: state => state.timer
   },
   mutations: {
     setUser (state, val) {
       state.user = val
+    },
+    setTimer (state, val) {
+      state.timer = val
     }
   },
   actions: {}
