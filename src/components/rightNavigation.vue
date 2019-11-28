@@ -5,40 +5,43 @@
       flat
       style="background: #ea6921;"
   >
-    <v-list-item @click="$emit('selected', 1)">
+    <v-list-item v-for="(item, i) in menu" :key="i" @click="goTo(item.path)" class="menuItem" dark>
       <v-list-item-content>
-        <v-list-item-title>Single-line item</v-list-item-title>
+        <v-list-item-title style="font-size: 1.3em">{{item.name}}</v-list-item-title>
       </v-list-item-content>
     </v-list-item>
 
-    <v-list-item two-line @click="$emit('selected', 2)">
-      <v-list-item-content>
-        <v-list-item-title>Two-line item</v-list-item-title>
-        <v-list-item-subtitle>Secondary text</v-list-item-subtitle>
-      </v-list-item-content>
-    </v-list-item>
-
-    <v-list-item three-line @click="$emit('selected', 3)">
-      <v-list-item-content>
-        <v-list-item-title>Three-line item</v-list-item-title>
-        <v-list-item-subtitle>
-          Secondary line text Lorem ipsum dolor sit amet,
-        </v-list-item-subtitle>
-        <v-list-item-subtitle>
-          consectetur adipiscing elit.
-        </v-list-item-subtitle>
-      </v-list-item-content>
-    </v-list-item>
   </v-card>
 </template>
 
 <script>
+//import router from '../router'
 export default {
   name: 'rightNavigation',
   props: {
     url: String
+  },
+  data(){ return {
+    menu: this.$router.options.routes.slice(1)
+  }},
+  methods: {
+    goTo(path) {
+      this.$router.replace(path)
+      this.$store.commit('setTimer', 30)
+    }
   }
 }
 </script>
 <style scoped>
+  .menuItem {
+    margin: 0 0 10px;
+    border-radius: 10px !important;
+    height: 75px;
+    font-weight: bold;
+    background-color: #f39322;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.3);
+    border-top: 3px solid rgba(255, 255, 255, 0.3);
+  }
 </style>
