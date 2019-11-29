@@ -53,10 +53,10 @@ export default {
     width: 1025px;
     height: 908px;
     overflow: auto;
-    background-color: #fec552;
+    background-color: #f7cb70;
   }
   .htmlContent table tr td {
-    background-color: #fec552;
+    background-color: #f7cb70;
     height: auto;
     padding: 4px 16px;
   }
