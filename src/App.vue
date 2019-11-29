@@ -15,7 +15,7 @@
           <router-view />
 				</v-col>
 				<v-col class="pa-5 rightColumn" style="background: #ea6921;height: 908px;" >
-					<div v-if="!user" @click="helper.changeProximityCode(21506889)" class="welcome py-10">
+					<div v-if="!user" class="welcome py-10">
             ПОЖАЛУЙСТА, ПРИЛОЖИТЕ ВАШ ПРОПУСК
             <img :src="images.proximity">
 					</div>
@@ -83,4 +83,7 @@ export default {
     font-size: 20px;
     letter-spacing: 1px
   }
+	.contentBlock {
+		background-color: #fec552;
+	}
 </style>

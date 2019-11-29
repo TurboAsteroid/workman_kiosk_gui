@@ -47,9 +47,6 @@ export default {
     padding: 20px;
     box-sizing: border-box;
   }
-  .htmlContentKvitok .kvitok {
-
-  }
   .htmlContent {
     width: 1025px;
     height: 908px;

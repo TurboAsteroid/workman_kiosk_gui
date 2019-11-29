@@ -1,7 +1,5 @@
 FROM node:alpine
 
-RUN npm install -g http-server
-
 # Create app directory
 WORKDIR /usr/src/app
 
@@ -10,10 +8,12 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm install --production
+RUN npm install
 # Bundle app source
 COPY . .
 
 RUN npm run build
 EXPOSE 3036
-CMD ["http-server", "dist", "--port", "3036", "--ssl", "--cert", "/etc/letsencrypt/live/apps.elem.ru/cert.pem", "--key", "/etc/letsencrypt/live/apps.elem.ru/privkey.pem"]
+EXPOSE 9696
+EXPOSE 9697
+CMD ["node", "serve.js"]
