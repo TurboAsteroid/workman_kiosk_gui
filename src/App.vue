@@ -1,6 +1,6 @@
 <template>
 	<v-app>
-		<v-container no-gutters style="width: 1280px; padding: 0">
+		<div no-gutters style="width: 1280px; padding: 0">
 			<v-row no-gutters>
 				<v-col style="background:#962716;">
 					<img :src="images.logo" style="margin-left: 20px; margin-top: 17px;"/>
@@ -25,7 +25,7 @@
 					</div>
 				</v-col>
 			</v-row>
-		</v-container>
+		</div>
 	</v-app>
 </template>
 
