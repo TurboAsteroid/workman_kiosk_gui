@@ -28,7 +28,7 @@ export default {
   }),
   methods: {
     updateContent: async function () {
-      let htmlResult = await axios.get(`https://apps.elem.ru:3033/routes/kiosk/education?card=${this.$store.state.user}`)
+      let htmlResult = await axios.get(`https://apps.elem.ru:3037/kiosk/education?card=${this.$store.state.user}`)
       this.list = htmlResult.data.data.data
     }
   },

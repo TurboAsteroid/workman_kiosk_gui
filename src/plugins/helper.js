@@ -22,7 +22,7 @@ const helper = {
     }
   },
   print: function (code) {
-    window.jsobject.PrintPage('https://apps.elem.ru:3033/routes/kiosk/getHTML/kvitokPrint?card='+code)
+    window.jsobject.PrintPage('https://apps.elem.ru:3037/kiosk/getHTML/kvitokPrint?card='+code)
   },
   install: function (Vue) {
     Object.defineProperty(Vue.prototype, "helper", {

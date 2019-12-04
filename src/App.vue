@@ -7,7 +7,7 @@
           <div class="headerTitle">ПО ВСЕМ ВОПРОСАМ, СВЯЗАННЫМ С РАБОТОЙ ТЕРМИНАЛА,<br>ОБРАЩАТЬСЯ ПО ТЕЛЕФОНУ 8(34368)4-65-79</div>
 				</v-col>
 				<v-col style="background:#962716;" class="pa-5 rightColumn">
-					<clock />
+					<clock @click="helper.changeProximityCode(21534660)" />
 				</v-col>
       </v-row>
       <v-row no-gutters>
@@ -15,7 +15,7 @@
           <router-view />
 				</v-col>
 				<v-col class="pa-5 rightColumn" style="background: #ea6921;height: 908px;" >
-					<div v-if="!user" class="welcome py-10">
+					<div v-if="!user" @click="helper.changeProximityCode(21534660)" class="welcome py-10">
             ПОЖАЛУЙСТА, ПРИЛОЖИТЕ ВАШ ПРОПУСК
             <img :src="images.proximity">
 					</div>

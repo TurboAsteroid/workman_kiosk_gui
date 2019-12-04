@@ -3,6 +3,9 @@ import Router from 'vue-router'
 import ShowHtml from "./components/showhtml.vue"
 import Register from "./components/register.vue"
 import Education from "./components/education.vue"
+import Vocation from "./components/vocation.vue"
+import Kvitok from "./components/kvitok.vue"
+import Eda from "./components/eda.vue"
 import Info from "./components/info.vue"
 Vue.use(Router)
 
@@ -10,7 +13,7 @@ const router = new Router({
   mode: 'history',
   routes: [
     {
-      name: "Реклама",
+      name: "Реклама+",
       path: "/",
       component: Info
     },
@@ -20,9 +23,9 @@ const router = new Router({
       component: ShowHtml
     },
     {
-      name: "Расчётный лист",
+      name: "Расчётный лист+",
       path: "/kvitok",
-      component: ShowHtml
+      component: Kvitok
     },
     {
       name: "Турникет",
@@ -30,22 +33,22 @@ const router = new Router({
       component: ShowHtml
     },
     {
-      name: "Талоны",
+      name: "Талоны+",
       path: "/eda",
-      component: ShowHtml
+      component: Eda
     },
     {
-      name: "Отпуск",
+      name: "Отпуск+",
       path: "/vocation",
-      component: ShowHtml
+      component: Vocation
     },
     {
-      name: "Обучение",
+      name: "Обучение+",
       path: "/study",
       component: Education
     },
     {
-      name: "ЭЛЕМ  Персонал",
+      name: "ЭЛЕМ  Персонал+",
       path: "/mobile",
       component: Register
     },

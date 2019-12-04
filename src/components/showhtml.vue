@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     updateContent: async function (path) {
-      let htmlResult = await axios.get(`https://apps.elem.ru:3033/routes/kiosk/getHTML${path}?card=${this.$store.state.user}`)
+      let htmlResult = await axios.get(`https://apps.elem.ru:3037/kiosk/getHTML${path}?card=${this.$store.state.user}`)
       this.content = htmlResult.data
     }
   }
