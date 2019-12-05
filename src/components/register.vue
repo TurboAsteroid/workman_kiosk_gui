@@ -1,5 +1,8 @@
 <template>
-  <v-container>
+  <div class=" pa-4">
+    <div class="headline font-weight-bold text-center pb-3">
+      Регистрация и восстановелние пароля к мобильному приложению:
+    </div>
     <v-stepper v-model="step">
       <v-stepper-header>
         <v-stepper-step :complete="step > 1" step="1">Введите номер телефона</v-stepper-step>
@@ -15,9 +18,12 @@
                   ref="form"
                   v-model="valid"
           >
+            <p>
+              Если вы хотите внось зарегистрироваться или забыли пароль к мобильному приложению, следуйте инструкции на экране.
+            </p>
             <v-text-field
                     v-model="input1"
-                    label="Укажите ваш телефон, на который будет зарегистрировано приложение"
+                    label="Укажите ваш телефон, на который будет зарегистрировано (или уже зарегистрировано) приложение"
                     prefix="+7"
                     :maxlength=maxLength
                     required
@@ -86,7 +92,7 @@
     <div class="mr-4">
       {{message}}
     </div>
-    <v-container class="lighten-5 numpad">
+    <v-container class="lighten-5 numpad" v-if="step!=3">
       <v-row>
         <v-col xs="auto">
           <v-card @click="append('1')" id="n1" class="btn">1</v-card>
@@ -131,7 +137,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </v-container>
+  </div>
 </template>
 
 <script>
