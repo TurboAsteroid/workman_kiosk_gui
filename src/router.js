@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import ShowHtml from "./components/showhtml.vue"
+import Siz from "./components/siz.vue"
 import Register from "./components/register.vue"
 import Education from "./components/education.vue"
 import Vocation from "./components/vocation.vue"
+import Control from "./components/control.vue"
 import Kvitok from "./components/kvitok.vue"
 import Eda from "./components/eda.vue"
 import Info from "./components/info.vue"
@@ -18,9 +19,9 @@ const router = new Router({
       component: Info
     },
     {
-      name: "Спецодежда",
+      name: "Спецодежда+-",
       path: "/siz",
-      component: ShowHtml
+      component: Siz
     },
     {
       name: "Расчётный лист+",
@@ -30,7 +31,7 @@ const router = new Router({
     {
       name: "Турникет",
       path: "/control",
-      component: ShowHtml
+      component: Control
     },
     {
       name: "Талоны+",

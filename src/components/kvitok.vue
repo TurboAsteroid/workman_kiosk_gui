@@ -1,7 +1,7 @@
 <template>
-  <v-container no-gutters class="pa-4 heightWrapper" v-if="content">
+  <div no-gutters class="pa-4 heightWrapper" v-if="content">
     <div class="heightScroll">
-      <div class="text-center headline">Расчётный листок за {{month}}.{{year}}</div>
+      <div class="headline font-weight-bold text-center">Расчётный листок за {{month}}.{{year}}</div>
       <table>
         <tr>
           <td>Цех(отдел): {{content.department.name}}</td>
@@ -102,7 +102,7 @@
     <div class="printBlock">
       <v-btn color="warning" @click="helper.print(user)" x-large dark>Напечатать</v-btn>
     </div>
-  </v-container>
+  </div>
 </template>
 
 <script>

@@ -1,10 +1,10 @@
 <template>
-  <div class="htmlContent">
-    <v-simple-table>
+  <div class="htmlContent pa-4">
+    <div class="headline font-weight-bold text-center">
+      Сведения по обучению:
+    </div>
+    <table class="educationTable">
       <thead>
-        <tr>
-          <td colspan="2" class="titleTd">Сведения по обучению</td>
-        </tr>
         <tr>
           <td>Дата обучения</td>
           <td>Тема</td>
@@ -16,7 +16,7 @@
         <td>{{item.title}}</td>
       </tr>
       </tbody>
-    </v-simple-table>
+    </table>
   </div>
 </template>
 
@@ -53,15 +53,16 @@ export default {
     width: 1025px;
     height: 908px;
     overflow: auto;
-    background-color: #fec552;
   }
-  .htmlContent table tr td {
-    background-color: #fec552;
+  .educationTable {
+    background-color: #f7cb70;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .educationTable tr td {
+    background-color: #f7cb70;
     height: auto;
     padding: 4px 16px;
-  }
-  .titleTd {
-    font-size: 1.2em;
-    text-align: center;
+    border: 1px solid black;
   }
 </style>
