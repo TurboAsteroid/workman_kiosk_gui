@@ -21,8 +21,11 @@ const helper = {
       router.replace("/")
     }
   },
+  setPrintable: function() {
+    store.commit('setPrintable', window.jsobject.getprintenable())
+  },
   print: function (code) {
-    window.jsobject.PrintPage('https://apps.elem.ru:3037/kiosk/getHTML/kvitokPrint?card='+code)
+    window.jsobject.PrintPage('https://apps.elem.ru:3037/kiosk/kvitokPrint?card='+code)
   },
   install: function (Vue) {
     Object.defineProperty(Vue.prototype, "helper", {

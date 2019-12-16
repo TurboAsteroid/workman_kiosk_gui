@@ -100,7 +100,7 @@
       </table>
     </div>
     <div class="printBlock">
-      <v-btn color="warning" @click="helper.print(user)" x-large dark>Напечатать</v-btn>
+      <v-btn v-if="printable == 1" color="warning" @click="helper.print(user)" x-large dark>Напечатать</v-btn>
     </div>
   </div>
 </template>
@@ -120,6 +120,9 @@ export default {
   computed: {
     user () {
       return this.$store.state.user
+    },
+    printable () {
+      return this.$store.state.printable
     }
   },
   watch: {
@@ -129,6 +132,7 @@ export default {
   },
   methods: {
     updateContent: async function () {
+      this.helper.setPrintable()
       let jsonResult = await axios.get(`https://apps.elem.ru:3037/kiosk/kvitok?card=${this.$store.state.user}`)
       this.content = jsonResult.data.data.data[0]
       this.month = jsonResult.data.data.month

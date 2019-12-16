@@ -8,18 +8,28 @@ export default new Vuex.Store({
   modules: {},
   state: {
     user: null,
-    timer: 0
+    access: 0,
+    timer: 0,
+    printable: 0
   },
   getters: {
     user: state => state.user,
-    timer: state => state.timer
+    printable: state => state.printable,
+    timer: state => state.timer,
+    access: state => state.access,
   },
   mutations: {
     setUser (state, val) {
       state.user = val
     },
+    setAccess (state, val) {
+      state.access = val
+    },
     setTimer (state, val) {
       state.timer = val
+    },
+    setPrintable (state, val) {
+      state.printable = val
     }
   },
   actions: {}
