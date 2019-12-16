@@ -37,7 +37,7 @@ export default {
     updateContent: async function () {
       let requestResult = await axios.get(`https://apps.elem.ru:3037/kiosk/vocation?card=${this.$store.state.user}`)
       this.planned_dates = requestResult.data.data.planned_dates
-      this.debt = requestResult.data.data.debt
+      this.debt = parseFloat(requestResult.data.data.debt).toFixed(2)
     }
   },
   computed: {

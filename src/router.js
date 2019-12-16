@@ -14,44 +14,52 @@ const router = new Router({
   mode: 'history',
   routes: [
     {
-      name: "Реклама+",
+      name: "Реклама",
       path: "/",
-      component: Info
+      component: Info,
+      show: 10
     },
     {
-      name: "Спецодежда+-",
+      name: "Спецодежда",
       path: "/siz",
-      component: Siz
+      component: Siz,
+      show: 1
     },
     {
-      name: "Расчётный лист+",
+      name: "Расчётный лист",
       path: "/kvitok",
-      component: Kvitok
+      component: Kvitok,
+      show: 0
     },
     {
       name: "Турникет",
       path: "/control",
-      component: Control
+      component: Control,
+      show: 0
     },
     {
-      name: "Талоны+",
+      name: "Талоны",
       path: "/eda",
-      component: Eda
+      component: Eda,
+      show: 1
     },
     {
-      name: "Отпуск+",
+      name: "Отпуск",
       path: "/vocation",
-      component: Vocation
+      component: Vocation,
+      show: 0
     },
     {
-      name: "Обучение+",
+      name: "Обучение",
       path: "/study",
-      component: Education
+      component: Education,
+      show: 0
     },
     {
-      name: "ЭЛЕМ  Персонал+",
+      name: "ЭЛЕМ  Персонал",
       path: "/mobile",
-      component: Register
+      component: Register,
+      show: 1
     },
   ]
 })

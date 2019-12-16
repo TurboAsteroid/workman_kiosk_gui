@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: #a23b2a">
+  <div class="tab_wraper" style="background-color: #a23b2a" >
     <v-tabs-items v-model="tab" class="imageBlock">
       <v-tab-item
           v-for="(item, i) in images"
@@ -17,7 +17,8 @@
         dark
         centered
         class="tabItemBlock"
-        height = "100"
+        height = "80"
+        :show-arrows="false"
     >
       <v-tab
         class="tabItem"
@@ -77,6 +78,10 @@ export default {
       {
         img: require('@/assets/img/10.jpg'),
         icon: require('@/assets/img/10_small.jpg')
+      },
+      {
+        img: require('@/assets/img/11.jpg'),
+        icon: require('@/assets/img/11_small.jpg')
       }
     ],
   }),
@@ -100,7 +105,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style >
   .imageBlock {
     height: 791px;
     width: 1025px;
@@ -112,22 +117,34 @@ export default {
   }
   .tabItem {
     display: inline-block;
-    width: 90px;
-    height: 87px;
+    width: 80px;
+    height: 77px;
     padding: 0;
     margin: 0 2px;
   }
   .tabItem img {
+    position:absolute;
+    left:0;
+    top:0;
   }
   .tabItemBlock {
     height: 117px;
     background-color: #a23b2a;
     padding-top: 17px;
     text-align: center;
-    width: 940px;
+    width: 1025px;
     margin: 0 auto;
   }
-
-
-
+  .tab_wraper .v-tab {
+    min-width: 80px;
+    width: 80px;
+    display: inline-block;
+  }
+  .v-tabs-slider-wrapper {
+    display: none;
+  }
+  .tab_wraper .v-slide-group__content {
+    display: block;
+    margin: 0 auto;
+  }
 </style>

@@ -19,7 +19,8 @@
                   v-model="valid"
           >
             <p>
-              Если вы хотите внось зарегистрироваться или забыли пароль к мобильному приложению, следуйте инструкции на экране.
+              Если вы хотите зарегистрироваться или забыли пароль к мобильному приложению, следуйте инструкции на экране.<br />
+              Помните, что на вашем устройстве должна стоять операционная система Android 6 или более новой версии.
             </p>
             <v-text-field
                     v-model="input1"
@@ -176,6 +177,8 @@ export default {
       this.valid = false
       this.valid2 = false
       this.message = ""
+      this.phoneRules = []
+      this.codeRules = []
     },
     async sendForm() {
       let response = await axios.post("https://apps.elem.ru:3033/routes/registration/phone", {
@@ -188,7 +191,7 @@ export default {
       } else {
         this.message = response.data.data.message
       }
-      this.$store.commit('setTimer', 30)
+      this.$store.commit('setTimer', 50)
     },
     async sendAproveCode() {
       let response = await axios.post("https://apps.elem.ru:3033/routes/registration/aprove", {

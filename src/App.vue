@@ -4,10 +4,10 @@
 			<v-row no-gutters>
 				<v-col style="background:#962716;">
 					<img :src="images.logo" style="margin-left: 20px; margin-top: 17px;"/>
-          <div class="headerTitle">ПО ВСЕМ ВОПРОСАМ, СВЯЗАННЫМ С РАБОТОЙ ТЕРМИНАЛА,<br>ОБРАЩАТЬСЯ ПО ТЕЛЕФОНУ 8(34368)4-65-79</div>
+          <div class="headerTitle">ПО ВСЕМ ВОПРОСАМ, СВЯЗАННЫМ С РАБОТОЙ ТЕРМИНАЛА,<br>ОБРАЩАТЬСЯ ПО ТЕЛЕФОНУ 8(34368)4-64-14</div>
 				</v-col>
 				<v-col style="background:#962716;" class="pa-5 rightColumn">
-					<clock @click="helper.changeProximityCode(21534660)" />
+					<clock />
 				</v-col>
       </v-row>
       <v-row no-gutters>
@@ -15,7 +15,7 @@
           <router-view />
 				</v-col>
 				<v-col class="pa-5 rightColumn" style="background: #ea6921;height: 908px;" >
-					<div v-if="!user" @click="helper.changeProximityCode(21534660)" class="welcome py-10">
+					<div v-if="!user" class="welcome py-10">
             ПОЖАЛУЙСТА, ПРИЛОЖИТЕ ВАШ ПРОПУСК
             <img :src="images.proximity">
 					</div>
@@ -54,7 +54,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style>
   @font-face{
     font-family: Franklin Gothic Heavy; /* Гарнитура шрифта */
     src: url(../public/FRAHV.TTF); /* Путь к файлу со шрифтом */
@@ -62,6 +62,9 @@ export default {
   * {
     font-family: Franklin Gothic Heavy;
   }
+	body, html {
+		overflow: hidden;
+	}
   .rightColumn {
     max-width: 255px;
     min-width: 255px;
